@@ -1,6 +1,6 @@
 // pages/index.js
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:4000/api/users");
+  const res = await fetch("https://bobo-server-ssr-580f817d937d.herokuapp.com/api/users");
   const users = await res.json();
 
   return { props: { users } };
