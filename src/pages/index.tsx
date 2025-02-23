@@ -26,10 +26,10 @@ export default function Home({ users }: { users: any }) {
       <div className="h-full w-full p-[16px]">
         <h1 className='mb-[16px]'>Server-Side Rendered Page</h1>
 
-        <div className="w-full h-full flex flex-wrap gap-[24px]">
+        <div className="w-full flex flex-wrap gap-[24px]">
           {users.map((user: any, i: number) => {
             return (
-              <div key={i} className="w-[300px] border border-gray-800" onClick={() => console.log(user.id)}>
+              <div key={i} className="w-[300px] max-h-[348px] border border-gray-800" onClick={() => console.log(user.id)}>
                 <img src={user.avatar} alt="Profile picture" />
                 <div>{user.name}</div>
                 <div>{user.email}</div>
