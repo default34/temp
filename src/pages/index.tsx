@@ -15,27 +15,28 @@ export default function Home({ users }: { users: any }) {
       <Head>
         <title>SSR Users</title>
         <meta property="og:title" content="Server-Side Rendered Page" />
-        <meta
-          property="og:description"
-          content="It's alive!!!"
-        />
+        <meta property="og:url" content="https://temp-iota-ochre.vercel.app/" />
+        <meta property="og:description" content="It's alive!!!" />
         <meta
           property="og:image"
           content="https://public.bnbstatic.com/static/images/common/ogImage.jpg"
         />
-        <meta property="og:url" content="https://temp-iota-ochre.vercel.app/" />
-        <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <div className="h-full w-full">
-        <h1>Server-Side Rendered Page</h1>
-        {users.map((user: any) => {
-          return (
-            <div className="pb-[24px]">
-              <div>{user.name}</div>
-              <div>{user.email}</div>
-            </div>
-          );
-        })}
+
+      <div className="h-full w-full p-[16px]">
+        <h1 className='mb-[16px]'>Server-Side Rendered Page</h1>
+
+        <div className="w-full h-full flex flex-wrap gap-[24px]">
+          {users.map((user: any, i: number) => {
+            return (
+              <div key={i} className="w-[300px] border border-gray-800" onClick={() => console.log(user.id)}>
+                <img src={user.avatar} alt="Profile picture" />
+                <div>{user.name}</div>
+                <div>{user.email}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
